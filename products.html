@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products & Services</title>
+    <link rel="stylesheet" href="products.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <h1>Sheng Siong Products</h1>
+            <p>All for you! Discover fresh groceries, quality housebrands, and unbeatable everyday savings.</p>
+        </header>
+
+        <!-- Product/Service Categories -->
+        <div class="categories">
+            <button class="category-btn active" onclick="filterCategory('all')">All Departments</button>
+            <button class="category-btn" onclick="filterCategory('digital')">Fresh and Groceries</button>
+            <button class="category-btn" onclick="filterCategory('consulting')">Sheng Siong Housebrands</button>
+            <button class="category-btn" onclick="filterCategory('design')">Frozen and Seafoods</button>
+        </div>
+
+        <!-- Photo Gallery / Offerings Grid (6 Items Minimum) -->
+        <main class="gallery-grid">
+            
+            <!-- Item 1 -->
+            <div class="product-card" data-category="digital">
+                <div class="image-container">
+                    <img src="images/image 1.png" alt="Fresh Organic Vegetables">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Fresh & Groceries</span>
+                    <h2 class="product-title">Organic Vegetables</h2>
+                    <p class="product-desc">Fresh, locally-sourced organic vegetables delivered straight to your doorstep. Packed with nutrients and flavor.</p>
+                    <div class="product-footer">
+                        <button class="cta-btn">Browse Category</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="product-card" data-category="consulting">
+                <div class="image-container">
+                    <img src="images/image 2.png" alt="Fresh Seafoods">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Fresh & Groceries</span>
+                    <h2 class="product-title">Fresh Seafoods</h2>
+                    <p class="product-desc">Premium fresh seafood sourced from sustainable fisheries, perfect for your next delicious meal.</p>
+                    <div class="product-footer">
+                        <button class="cta-btn">Browse Category</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="product-card" data-category="design">
+                <div class="image-container">
+                    <img src="images/image 3.png" alt="Housebrand Materials">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Sheng Siong Housebrands</span>
+                    <h2 class="product-title">Housebrand Materials</h2>
+                    <p class="product-desc">High-quality household essentials and daily necessities, designed for convenience and durability.</p>
+                    <div class="product-footer">
+                        <button class="cta-btn">Browse Category</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="product-card" data-category="digital">
+                <div class="image-container">
+                    <img src="images/image 4.png" alt="Pantry Staples">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Fresh & Groceries</span>
+                    <h2 class="product-title">Pantry Staples</h2>
+                    <p class="product-desc">Essential ingredients for every kitchen, carefully selected for quality and taste.</p>
+                    <div class="product-footer">
+                        <button class="cta-btn">Browse Category</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="product-card" data-category="consulting">
+                <div class="image-container">
+                    <img src="images/image 5.png" alt="Tasty Bites">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Sheng Siong Housebrands</span>
+                    <h2 class="product-title">Tasty Bites Crispy Chicken Nuggets</h2>
+                    <p class="product-desc">Quick, delicious, and budget-friendly. Great for an afternoon snack or school lunches. Crispy on the outside, juicy inside.</p>
+                    <div class="product-footer">
+                        <button class="cta-btn">Browse Category</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="product-card" data-category="design">
+                <div class="image-container">
+                    <img src="images/image 6.png" alt="Fresh Meats">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Fresh & Groceries</span>
+                    <h2 class="product-title">Fresh Meats</h2>
+                    <p class="product-desc">Premium cuts of fresh meat, sourced from local farms and butcher shops, perfect for your next home-cooked meal.</p>
+                    <div class="product-footer">
+                        <button class="cta-btn">Browse Category</button>
+                    </div>
+                </div>
+            </div>
+            
+
+        </main>
+    </div>
+
+    <!-- Simple Filtering Script -->
+    <script>
+        function filterCategory(category) {
+            // Update active button styling
+            const buttons = document.querySelectorAll('.category-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter the items
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
